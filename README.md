@@ -68,7 +68,7 @@ Will usually answer within 45 mins.
 
 ## Flow
 
-There are four types of orders that a user can create.
+There are four types of off-chain orders that a user can create.
 
 1. long put
 2. short put
@@ -102,7 +102,7 @@ At a high level, there are 4 main entry points:
 - `withdraw(Order memory order)`
 - `cancel(Order memory order)`
 
-All orders are stored off chain until they are settled on chain through `fillOrder`.
+All orders are stored off-chain until they are settled on chain through `fillOrder`.
 There exists much more rigorous specification files in `./contracts/spec` with diagrams included.
 
 ## Libraries
