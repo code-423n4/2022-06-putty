@@ -43,7 +43,7 @@ _`-\     / ________C|====|________.:::::::::.______
 ## Links
 
 - **Rinkeby demo site:** https://rinkeby.putty.finance
-- **Rinkeby etherscan:** https://rinkeby.etherscan.io/address/0x1af0defa683e36dfe543dcf196bc1eaddbaddc36
+- **Rinkeby etherscan:** https://rinkeby.etherscan.io/address/0xc67dbd1f722edc4b7f409f287ed6f7d928aa730c
 - **Twitter:** https://twitter.com/puttyfi
 - **Discord:** https://discord.gg/rxppJYj4Jp
 
