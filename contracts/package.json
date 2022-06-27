@@ -1,0 +1,28 @@
+{
+  "name": "putty-v2",
+  "author": "outdoteth",
+  "version": "1.0.0",
+  "description": "Exotic NFT and ERC20 covered call vaults",
+  "homepage": "https://github.com/outdoteth/putty-v2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/outdoteth/putty-v2.git"
+  },
+  "scripts": {
+    "prettier": "prettier --write 'src/**/*.sol'",
+    "prettier:list": "prettier --list-different 'src/**/*.sol'",
+    "prettier:check": "prettier --check 'src/**/*.sol'",
+    "solhint": "solhint --config ./.solhint.json 'src/**/*.sol' --fix",
+    "solhint:check": "solhint --config ./.solhint.json 'src/**/*.sol'",
+    "lint": "npm run prettier && npm run solhint",
+    "lint:check": "npm run prettier:check && npm run solhint:check",
+    "slither": "slither ./src/PuttyV2.sol --solc-args \"--optimize --optimize-runs 100000\"",
+    "deploy:rinkeby": "forge create src/PuttyV2.sol:PuttyV2 --rpc-url $RINKEBY_URL --interactive --constructor-args https://api.rinkeby.putty.finance/metadata/ 0 0xc778417e063141139fce010982780140aa0cd5ab"
+  },
+  "dependencies": {
+    "ethers": "^5.6.8",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "solhint": "^3.3.7"
+  }
+}
