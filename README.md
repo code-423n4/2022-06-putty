@@ -57,7 +57,7 @@ Feel free to contact if you have questions.
 - telegram: [@outdoteth](https://t.me/outdoteth)
 - discord: out.eth#2001
 
-Will usually answer within 45 mins unless I'm eating or smth.
+Will usually answer within 45 mins.
 
 ## Contracts Overview
 
@@ -103,7 +103,7 @@ At a high level, there are 4 main entry points:
 - `cancel(Order memory order)`
 
 All orders are stored off chain until they are settled on chain through `fillOrder`.
-There exists much more rigorous specification files in `./spec` with diagrams included.
+There exists much more rigorous specification files in `./contracts/spec` with diagrams included.
 
 ## Libraries
 
@@ -136,7 +136,6 @@ function balanceOf(address owner) public pure override returns (uint256) {
   require(owner != address(0), "ZERO_ADDRESS");
   return type(uint256).max;
 }
-
 ```
 
 This was done to save gas since not tracking the `balanceOf` avoids a single storage modification or initialisation on each transfer/mint/burn.
