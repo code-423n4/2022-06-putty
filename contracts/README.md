@@ -41,5 +41,5 @@ solc-select use 0.8.13
 Then to run:
 
 ```
-yarn slither
+slither ./src/PuttyV2.sol --solc-args "--optimize --optimize-runs 100000"
 ```
