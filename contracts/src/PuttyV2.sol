@@ -110,7 +110,7 @@ contract PuttyV2 is PuttyV2Nft, EIP712("Putty", "2.0"), ERC721TokenReceiver, Own
                 "uint256 premium,",
                 "uint256 duration,",
                 "uint256 expiration,",
-                "uint256 nonce,"
+                "uint256 nonce,",
                 "address[] whitelist,",
                 "address[] floorTokens,",
                 "ERC20Asset[] erc20Assets,",
