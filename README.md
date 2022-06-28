@@ -27,6 +27,8 @@ forge install
 forge test --gas-report
 ```
 
+Note: earlier versions of foundry may cause the tests to fail.
+
 ---
 
 ```
