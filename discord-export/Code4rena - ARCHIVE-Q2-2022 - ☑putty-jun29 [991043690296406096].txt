@@ -1,0 +1,765 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q2-2022 / ☑putty-jun29
+==============================================================
+
+[06/27/2022 6:20 PM] kartoonjoy
+👋 Hello and welcome to the contest channel for the $50K USDC**Putty** contest!
+
+📆 Contest opens 06/29/2022 8:00 PM (20:00 UTC) and runs through 07/04/2022 8:00 PM (20:00 UTC) (5 days).
+
+Please give a warm welcome to the Putty team, particularly @out.eth, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-06-putty-contest
+
+{Embed}
+https://code4rena.com/contests/2022-06-putty-contest
+Code4rena Putty contest
+$50,000 USDC
+29 June 2022—4 July 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+C4Keycap (20) 
+
+[06/27/2022 6:57 PM] haruxe
+@out.eth you’re in good hands :WorryWave:
+
+{Reactions}
+pray (4) 🙏 (4) 
+
+[06/27/2022 7:36 PM] out.eth
+Hey guys feel free to DM me if you have any questions. I'm online from 07:00 UTC -> 22:30 UTC 🙂
+
+{Reactions}
+thankyou (15) C4Keycap (6) 
+
+[06/29/2022 9:45 PM] haruxe
+This is a really cool concept for a market :FeelsOkayMan: :TeaTime:
+
+{Reactions}
+comfy (3) 
+
+[06/29/2022 10:03 PM] nine_december
+Sent you request!
+
+
+[06/29/2022 10:12 PM] out.eth
+accepted!
+
+{Reactions}
+thankyou 
+
+[06/30/2022 4:06 PM] danb#6193
+what are floor tokens?
+
+
+[06/30/2022 4:49 PM] 0xa5df
+I also wondered, it is explained at the README of the repo
+https://github.com/code-423n4/2022-06-putty#floor-options
+
+{Embed}
+https://github.com/code-423n4/2022-06-putty
+GitHub - code-423n4/2022-06-putty
+Contribute to code-423n4/2022-06-putty development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/ff9474d5-352c-4dc5-9add-7e4a54f5905e-AF467
+
+
+[06/30/2022 4:49 PM] danb#6193
+Thank you!
+
+{Reactions}
+🙏 
+
+[06/30/2022 4:50 PM] 0xa5df
+You're welcome
+
+
+[06/30/2022 5:41 PM] JohnSmith#1623
+which is same as contest description....
+
+{Reactions}
+👍 
+
+[07/01/2022 2:45 AM] elku.cryptos
+dm'ed
+
+{Reactions}
+👍 
+
+[07/01/2022 5:23 PM] zachobront
+Any chance this contest can be extended until Tues? Having 3/5 days be either weekend or July 4th holiday is making it tricky to finish in time.
+
+{Reactions}
+👎 (6) 
+
+[07/01/2022 5:26 PM] JohnSmith#1623
+'Merica! Fuck yeah! 🇺🇸 🇺🇸 🇺🇸
+
+
+[07/01/2022 5:28 PM] JohnSmith#1623
+I  say we move days of week because of July 4th
+
+{Reactions}
+😁 (5) 
+
+[07/01/2022 5:44 PM] pedroais
+Yeah because we're all americans
+
+{Reactions}
+😃 (2) 🤣 (2) 
+
+[07/01/2022 5:45 PM] pedroais
+Lets extend contests for all holidays in all countries 😉
+
+{Reactions}
+🙃 (3) 🤣 
+
+[07/01/2022 7:04 PM] cloudellie
+all holidays, no contests lol
+
+{Reactions}
+🤣 (13) 
+
+[07/02/2022 5:14 PM] nahsiz#7945
+dm'ed
+
+{Reactions}
+👍 
+
+[07/02/2022 10:43 PM] zer0dot
+Hey noticed tests (incl. failing tests) affect gas report results.
+
+
+[07/02/2022 10:43 PM] zer0dot
+I guess the most reliable gas stat is the maximum then yeah? Cause it for sure won't be a revert
+
+
+[07/02/2022 10:44 PM] zer0dot
+I was noting the avg gas, then I commented a reverting test, and now the avg gas went up :kekhands:
+
+
+[07/03/2022 8:09 AM] out.eth
+Hi do you mean to say that there are failing tests? Or are you talking about tests that check for the revert case? (There should be no failing tests)
+
+
+[07/03/2022 9:22 AM] elku.cryptos
+Does the order in which tests are passed different in each run? Or is it just printed in different order by forge on different runs?
+
+
+[07/03/2022 10:28 AM] out.eth
+forge runs all of the tests in parallel so there is no guaranteed ordering (afaik). they get logged to the console as each test file is fully run. then the tests within each test file are logged alphabetically.
+
+{Reactions}
+👍 
+
+[07/03/2022 2:32 PM] zer0dot
+Hi yeah revert cases
+
+
+[07/03/2022 2:54 PM] out.eth
+Ok, to get a specific gas cost for a call there are some helper methods here: startMeasuringGas and stopMeasuringGas https://github.com/code-423n4/2022-06-putty/blob/main/contracts/test/shared/Fixture.t.sol#L52
+
+(I just noticed that there it says -20_000 in stopMeasuringGas. This should be changed to -100)
+
+But otherwise in the gas report any optimisation should improve min, avg, median, max across the board (including for revert cases).
+
+{Embed}
+https://github.com/code-423n4/2022-06-putty/blob/main/contracts/test/shared/Fixture.t.sol
+2022-06-putty/Fixture.t.sol at main · code-423n4/2022-06-putty
+Contribute to code-423n4/2022-06-putty development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/ff9474d5-352c-4dc5-9add-7e4a54f5905e-AF467
+
+
+[07/03/2022 9:39 PM] auditor0517
+@out.eth Can I ask one thing on DM?
+
+{Reactions}
+👍 
+
+[07/04/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Putty** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the **Putty** team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+[07/04/2022 8:21 PM] out.eth
+https://tenor.com/view/baby-yoda-babyyoda-gif-20491479
+
+{Embed}
+https://tenor.com/view/baby-yoda-babyyoda-gif-20491479
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/baby-yoda-F02B5.png
+
+{Reactions}
+badgerchad (6) 🎉 (9) 😂 (2) 
+
+[07/04/2022 8:22 PM] nine_december
+Nice gif. Was munchies time.
+
+{Reactions}
+cute 
+
+[07/04/2022 8:34 PM] JohnSmith#1623
+https://tenor.com/view/leonardo-dicaprio-cheers-the-great-gatsby-coupe-glass-toast-gif-10657915
+
+{Embed}
+https://tenor.com/view/leonardo-dicaprio-cheers-the-great-gatsby-coupe-glass-toast-gif-10657915
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/leonardo-dicaprio-cheers-A58FF.png
+
+{Reactions}
+C4Keycap 
+
+[07/04/2022 9:50 PM] haruxe
+https://tenor.com/view/cat-jam-gif-18110512
+
+{Embed}
+https://tenor.com/view/cat-jam-gif-18110512
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/cat-jam-6BC60.png
+
+{Reactions}
+cat_headbang_devcord (9) 1551catjamfasterthanever (5) 6407_CatJamDisco (7) 2234catjamcry (5) catjam (6) 3073catjamhigh (5) pepeJAM (4) pepejam (4) pepejam (5) 6850pepejam (4) blobDance (5) BUGSdance (5) C4Keycap (3) ethereum (3) cyberheart (3) 
+
+[07/04/2022 10:01 PM] horsefacts
+gg everyone! I'm afraid I broke the Rinkeby frontend in a few places by opening orders against other Putty position tokens, like this one: https://rinkeby.putty.finance/order/0x6ce280f5bd82103ad553ad497bda9e16c1cfecd351dd2a60673215bf08957d67. If you're debugging these, that's what's going on here.
+
+
+[07/05/2022 1:00 AM] cloudjunky
+I really enjoyed this contest. Putty was alot of fun and forced me to learn about Options 🙏
+
+{Reactions}
+comfyhype (4) 
+
+[07/05/2022 6:15 AM] out.eth
+Ah np, better in testnet than in prod!
+
+
+[07/05/2022 8:42 AM] minh___
+same, the very first contest I participated in. Very nicely documented and surprisingly small codebase. Didnt manage to find any vulns but learned a bunch of things and will be looking forward to the report :)
+
+{Reactions}
+🍻 (8) 🤝 (3) 
+
+[07/07/2022 6:58 AM] out.eth
+hey @P12473, saw you DM'd me but i can't respond unless we are friends
+
+
+[07/07/2022 9:25 AM] p12473
+Ah whoops 😅
+
+
+[07/20/2022 10:40 PM] haruxe
+any updates? :PauseChamp:
+
+
+[07/23/2022 4:57 AM] haruxe
+:PauseChamp:
+
+
+[07/23/2022 6:00 PM] haruxe
+:PauseChamp:
+
+
+[07/23/2022 6:13 PM] ellahi
+:PauseChamp:
+
+
+[07/24/2022 9:50 AM] Arshia#7675
+https://tenor.com/view/american-psycho-%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BF%D0%B0%D1%82-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%B0%D0%BD%D0%B1%D0%B5%D0%B9%D0%BB-american-psychopath-christian-bale-gif-17867735
+
+{Embed}
+https://tenor.com/view/american-psycho-%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BF%D0%B0%D1%82-%D0%BA%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%B0%D0%BD%D0%B1%D0%B5%D0%B9%D0%BB-american-psychopath-christian-bale-gif-17867735
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/american-psycho-%25D0%25B0%25D0%25BC%25D0%-1146C.png
+
+{Reactions}
+PauseChamp (2) 
+
+[07/24/2022 8:01 PM] haruxe
+:PauseChamp:
+
+
+[07/25/2022 7:35 AM] haruxe
+:PauseChamp:
+
+{Reactions}
+😂 
+
+[07/25/2022 10:41 PM] 0xdjango
+As much as I’d like to see how long your streak would go… Putty just went to post-judging QA. Shouldn’t be too long now before award announcement.
+
+{Reactions}
+🤣 
+
+[07/25/2022 11:18 PM] haruxe
+:PagMan:
+
+
+[07/26/2022 8:49 AM] JohnSmith#1623
+push it to the limit, don't let anyone stop you
+
+{Reactions}
+🙂 (2) 🤣 (6) 
+
+[07/26/2022 8:06 PM] haruxe
+:PauseChamp:
+
+{Reactions}
+🤣 (10) 
+
+[07/27/2022 3:05 AM] sm4rty_
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/unknown-85497.gif
+
+
+[07/27/2022 7:46 AM] haruxe
+:PauseChamp:
+
+
+[07/28/2022 8:54 PM] haruxe
+:PauseChamp:
+
+{Reactions}
+🙄 (2) 
+
+[07/29/2022 8:59 AM] haruxe
+:PauseChamp:
+
+
+[07/29/2022 9:05 AM] kenzoagada
+You know the saying
+
+
+[07/29/2022 9:06 AM] kenzoagada
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/unknown-D6043.png
+
+{Reactions}
+👆 (4) 💯 (5) 🤣 (12) 
+
+[07/29/2022 8:03 PM] haruxe
+https://tenor.com/view/you-cant-stop-me-gif-12409965
+
+{Embed}
+https://tenor.com/view/you-cant-stop-me-gif-12409965
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/you-cant-stop-me-6D1AD.png
+
+
+[08/01/2022 4:20 PM] rohan16
+Putty is taking a lot of time
+
+
+[08/01/2022 4:22 PM] 0xa5df
+There's a PR with the awards:
+https://github.com/code-423n4/code423n4.com/pull/3191/files
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/3191/files
+Update leaderboard for contest: Putty Finance by code423n4 · Pull R...
+This auto-generated PR to the update the leaderboard
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/81770958-D6E57
+
+{Reactions}
+❤️ (3) 
+
+[08/02/2022 6:53 PM] Noah3o6#2496
+is there a way that someone is missing? I have submitted and not on the list
+
+
+[08/02/2022 6:55 PM] 0xa5df
+Was it multiple QA/gas reports? Because they get invalidated if you post more than one (for each category - QA/gas)
+
+
+[08/02/2022 7:07 PM] Noah3o6#2496
+not that I know, could this have something to do with the auth, at this time I had trouble with this. I took a look in my email account and can’t see a submition email too.
+
+
+[08/02/2022 7:15 PM] 0xa5df
+If you didn't get an email it sounds more like there was a submission issue, maybe you can ask the admins or something (I doubt they'd be able to do something about past contest, but maybe they'll be able to fix it for future ones)
+
+
+[08/02/2022 7:15 PM] Noah3o6#2496
+okay thanks for your help
+
+
+[08/02/2022 7:16 PM] 0xa5df
+np
+
+
+[08/02/2022 7:35 PM] cloudellie
+Hey @Noah3o6, sorry to hear this happened. If you don't receive an email confirmation of your submissions, it's always a good idea to submit a Help Desk request so we can look into it right away. 
+
+Has your auth issue been resolved, or are you still having problems with that?
+
+
+[08/02/2022 7:40 PM] Noah3o6#2496
+Yes, next time if something like this happen I will do so.
+Two the second point, it’s solved kartoonjoy helped me and know everything works fine.
+
+{Reactions}
+hi5 (2) 👍 💜 thankyou 
+
+[08/02/2022 7:42 PM] cloudellie
+Awesome, glad to hear it. @kartoonjoy | C4 🎇🎇 is the best!
+
+{Reactions}
+💯 (5) 💜 
+
+[08/03/2022 2:34 PM] itsmetechjay
+🤑 🎉 Awards for **Putty Finance**:
+
+$4,724.00 USDC » @hansfriese 
+$3,929.01 USDC » @hyh 
+$2,830.87 USDC » @minhquanym 
+$2,137.91 USDC » @csanuragjain 
+$2,078.12 USDC » @Bernd 
+$1,995.39 USDC » @xiaoming90 
+$1,816.25 USDC » @zzzitron 
+$1,773.63 USDC » @IllIllI 
+$1,744.06 USDC » @unforgiven 
+$1,728.46 USDC » @horsefacts 
+$1,679.66 USDC » @kirk-baird 
+$1,443.96 USDC » @Roman 
+$1,397.16 USDC » @shung🌞🌈 
+$1,317.61 USDC » hubble (ksk2345, @shri4net)
+$1,103.85 USDC » @Metatron 
+$967.03 USDC » @0xsanson 
+$920.96 USDC » @lucyoa 
+$902.32 USDC » @Kenshin 
+$842.77 USDC » @100proof 
+$841.73 USDC » @0xNineDec 
+$827.90 USDC » @cccz 
+$810.11 USDC » @danb 
+$778.18 USDC » PwnedNoMore (@izhuer, @ItsNio, @papr1ka2)
+$727.40 USDC » @auditor0517 
+$631.05 USDC » @0x52 - Away Until 8/9 
+$583.92 USDC » @zishansami 
+$556.87 USDC » @sashik_eth 
+$509.54 USDC » @Pedroais 
+$488.82 USDC » @PENGUN 
+$482.41 USDC » @0xc0ffEE 
+$467.65 USDC » @Treasure-Seeker 
+$365.60 USDC » @Alex The Entreprenerd 
+$330.63 USDC » @shenwilly 
+$253.78 USDC » @swit 
+$223.38 USDC » BowTiedWardens (@BowTiedHeron, @BowTiedPickle, @m4rio.eth, @Dravee, @BowTiedFirefox)
+$185.31 USDC » @TrungOre 
+$166.23 USDC » @0xA5DF 
+$153.74 USDC » @Picodes | Angle 
+$148.61 USDC » @joestakey 
+$145.05 USDC » @0x1f8b 
+$131.53 USDC » @ACai 
+$131.53 USDC » @Ignacio 
+$130.46 USDC » @DefSec 
+$118.54 USDC » @catchup 
+$110.36 USDC » @Critical 
+$110.36 USDC » @codexploder 
+$103.35 USDC » @Zer0dot 
+$103.01 USDC » @dirk_y
+
+{Reactions}
+yay (5) ✅ 
+
+[08/03/2022 2:34 PM] itsmetechjay
+$97.28 USDC » @antonttc 
+$89.02 USDC » @P12473 
+$88.59 USDC » @Django | Saloon Finance 
+$83.78 USDC » 0xf15ers  (@remora0, @twojoy)
+$81.57 USDC » @Bnke 
+$79.74 USDC » @Chom 
+$78.90 USDC » @StErMi 
+$75.94 USDC » @ElKu 
+$75.27 USDC » @0xNazgul 
+$74.60 USDC » @simon135 
+$73.82 USDC » @thinklab 
+$73.45 USDC » @__141345__ 
+$72.88 USDC » @MiloTruck 
+$71.18 USDC » @TomJ 
+$70.30 USDC » @JohnSmith 
+$70.19 USDC » @gogo 
+$68.82 USDC » @Funen 
+$68.72 USDC » @_Adam 
+$68.53 USDC » @cryptphi 
+$68.48 USDC » @rokinot 
+$68.46 USDC » @JC
+$68.32 USDC » @Kaiziron 
+$68.32 USDC » @hake | SmartSek 
+$68.32 USDC » @robee 
+$68.31 USDC » @Limbooo 
+$68.31 USDC » @Waze 
+$68.31 USDC » @ReyAdmirado 
+$68.30 USDC » @madwookie 
+$68.30 USDC » @fatherOfBlocks 
+$68.30 USDC » @durianSausage 
+$68.30 USDC » @datapunk 
+$68.30 USDC » @delfin454000 
+$68.30 USDC » @rajatbeladiya 
+$68.30 USDC » Hawkeye (@0xwags, @0xmint)
+$68.30 USDC » @Yiko 
+$56.36 USDC » @Sm4rty 
+$52.71 USDC » @AmitN 
+$52.66 USDC » 0x29A  (@anon, @Rotcivegaf)
+$52.65 USDC » @peritoflores 
+$47.18 USDC » @samruna 
+$47.15 USDC » @async 
+$47.15 USDC » GimelSec (@rayn | GimelSec, @sces60107 | GimelSec) 
+$47.15 USDC » Nethermind @mauricio1802, @dic0de, @visgoth, @thomaspanf , @kaliberpoziomka8552, @CalabashSquash, @Parth,  @DestroyerSrt)
+$47.15 USDC » @saneryee 
+$47.13 USDC » @doddle0x 
+$47.13 USDC » @0xSolus 
+$47.13 USDC » @aysha 
+$47.13 USDC » @David_ 
+$47.13 USDC » @Sneaky 
+$45.92 USDC » @TerrierLover 
+$41.89 USDC » @hatch 
+$28.80 USDC » @0xkatana 
+$26.72 USDC » @rfa 
+$23.06 USDC » @grrwahrr 
+$21.59 USDC » @0xKitsune 
+$21.59 USDC » @RedOneN 
+$21.33 USDC » @UnusualTurtle 
+$21.24 USDC » @code-cipher 
+$21.24 USDC » @saian 
+$21.24 USDC » @Tomio 
+$21.18 USDC » @c3phas 
+$21.18 USDC » @jayfromthe13th 
+$21.18 USDC » @z3s 
+$21.17 USDC » @0v3rf10w 
+$21.17 USDC » @ajtra 
+$21.17 USDC » @ak1 
+$21.17 USDC » @Fitraldys 
+$21.17 USDC » @m_Rassska 
+$21.17 USDC » @mektigboy 
+$21.17 USDC » @0xpathfindr 
+$21.17 USDC » @Natzuu 
+$21.17 USDC » @Randyyy 
+$21.17 USDC » @slywaters 
+$21.17 USDC » @sach1r0 
+$21.17 USDC » @cRat1st0s 
+$21.17 USDC » @ladboy233小伙子 
+$21.17 USDC » @zeesaw 
+$21.17 USDC » @3xHarry 
+$21.17 USDC » @apostle0x01 
+$21.17 USDC » @Sloth 
+$21.17 USDC » @codetilda 
+$21.17 USDC » @haruxe 
+$21.17 USDC » @Ruhum 
+$21.17 USDC » @StyxRave 
+$5.52 USDC » @dipp 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 20 total, 4 unique
+Med risk findings: 121 total, 16 unique
+Gas optimization reports: 94
+QA reports: 82
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+{Reactions}
+✅ 
+
+[08/03/2022 3:38 PM] sm4rty_
+Got my first medium severity bug in this contest😇😇
+
+{Reactions}
+🎉 (23) hi5 (4) 
+
+[08/03/2022 4:36 PM] neumoxx
+When does the findigs repo become public?
+
+
+[08/03/2022 4:40 PM] itsmetechjay
+Once the final report is published.
+
+
+[08/03/2022 4:41 PM] neumoxx
+Thx!
+
+{Reactions}
+hi5 
+
+[08/03/2022 6:50 PM] nahsiz#7945
+My first contest and first high severity bug 😇 
+Really enjoyed the whole process. 😄
+
+{Reactions}
+🎉 (12) hi5 (4) 
+
+[08/04/2022 12:42 AM] saneryee
+My first awards in C4.🤩  Really happy in C4 community.🧐
+
+{Reactions}
+🎉 (11) hi5 (4) 
+
+[08/05/2022 2:06 AM] 100proof
+A nice litter earner for you. Congrats.
+
+{Reactions}
+thankyou 
+
+[08/06/2022 8:45 AM] Amithuddar#9571
+I had submitted 8 gas finding, i can't see my name in list
+
+
+[08/06/2022 8:47 AM] rotcivegaf
+Maybe submit an invalid report
+
+
+[08/06/2022 9:12 AM] sm4rty_
+Did you submitted all in gas finding as one report?
+
+
+[08/06/2022 9:12 AM] Amithuddar#9571
+No separate all
+
+
+[08/06/2022 9:13 AM] sm4rty_
+It will be invalidated then..
+
+
+[08/06/2022 9:13 AM] Amithuddar#9571
+So all gas finding should be made one report and submit only once?
+
+
+[08/06/2022 9:14 AM] sm4rty_
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q2-2022 - ☑putty-jun29 [991043690296406096].txt_Files/unknown-1-D5EC5.png
+
+
+[08/06/2022 9:14 AM] sm4rty_
+Read it carefully
+
+
+[08/06/2022 9:14 AM] sm4rty_
+Be careful next time
+
+
+[08/06/2022 9:15 AM] Amithuddar#9571
+Whole July month i have submitted that way only to all programs, anything can be done now for other contest which I had submitted in July?
+
+
+[08/06/2022 9:18 AM] sm4rty_
+You can submit help desk ticket. Good luck
+
+
+[08/06/2022 9:19 AM] sm4rty_
+Be careful next time.. Or else You all report will be invalidated
+
+
+[08/06/2022 9:27 AM] Amithuddar#9571
+I will submit help desk ticket today, thanks
+
+
+[08/07/2022 2:46 PM] Amithuddar#9571
+i have submitted ticket with content: I have not submitted all in gas finding as one report in whole july month for all contest, i want to make them one report.  Contest name: New Blockchain, Putty,  Juicebox,  Juicebox, Swivel,ENS ,  Swivel, Yield, Golom, Axelar. I hope you help me out here, even i want to know my report for whole month are right or not. Please do encourage me by helping me, as it was my first month on code4arena
+
+
+[08/07/2022 2:54 PM] JohnSmith#1623
+wow, you put a lot of time into contests, why did you not find a moment to read the rules before submitting anything?
+
+{Reactions}
+👍 (3) 👆 (2) 
+
+[08/07/2022 3:03 PM] Amithuddar#9571
+thanks, first time mistake happen, if they do them one report then i can give more time to code4areana else i can't give time because i can't waste one more month figuring out
+
+
+[08/07/2022 3:10 PM] JohnSmith#1623
+The truth is you are not alone in this, I did this mistake too, and lately we got a lot of new wardens, who did not pay attention too, like I bet dozens did same mistake only last month. So do you suggest we should make exception for you or for everyone, and what about people, whose work already has been invalidated?
+
+
+[08/07/2022 3:13 PM] Amithuddar#9571
+putty results out you can leave it,  but remaining contest:New Blockchain,  Juicebox,  Juicebox, Swivel,ENS ,  Swivel, Yield, Golom, Axelar. Results are not yet out they can be made one report. code4arena should support white hat hackers like us who who want to make system secure, we all are working for good cause
+
+
+[08/07/2022 3:40 PM] sm4rty_
+Bro, the team  works very hard for c4 contests. Although you can request them to fix it, But they are not obliged to fix mistakes you made instead of proper warnings. I too made the same mistake in few contest, I didn't got paid for any of them including opensea, I am OK with it, as it was my mistake.  Move on and Just make sure you don't do it again.
+
+{Reactions}
+👍 (6) 
+
+[08/07/2022 3:43 PM] Amithuddar#9571
+i have requested let's see, they will also do mistake one day that time wardens will sure take revenge of it, I am sure.
+
+{Reactions}
+👎 (9) 
+
+[08/07/2022 3:46 PM] sm4rty_
+Be respectful Bro, why are talking about revenge?  I can understand you didn't got paid but this is certainly not the way to show your anger.
+
+
+[08/07/2022 3:48 PM] Amithuddar#9571
+sorry, it's painful to see month of work for nothing and nothing can be done
+
+
+[08/07/2022 3:54 PM] JohnSmith#1623
+Well, there is no answer from c4 staff yet.
+Maybe they'll put it to a vote, it is a DAO after all 😀
+
+
+[08/07/2022 3:56 PM] Amithuddar#9571
+I am fine if no reply yet all or all vote to make whole month invalid.  DAO is double edge sword
+
+
+[08/07/2022 4:09 PM] rohan16
+@Amithuddar see your concern is absolutely correct that you invested a lot of time in doing all the contest but brother be a bit logical and respectful to the team who is providing you the contest and the rules are already displayed it's not like they are informing to everybody one by one and I guess you are smart enough to overcome your mistake and just forget what you didn't got in the last month just think that a lot of knowledge you gained from the last whole month and apply it on the all upcoming contest and move on in a positive manner with being kind to the c4 team😇
+
+{Reactions}
+👍 (8) 
+
+[08/07/2022 4:13 PM] rohan16
+and dude you are too smart earn more of from the upcoming contests man 😇
+
+
+[08/07/2022 6:47 PM] Amithuddar#9571
+I get it now why only few participants on this site
+
+{Reactions}
+🍌 (6) 🤣 (5) 🧂 (6) 👋 💯 
+
+[08/07/2022 7:12 PM] minh___
+afaik, the amount of wardens only keeps growing , stop being salty
+
+
+[08/09/2022 1:04 AM] sockdrawermoney
+@Amithuddar Unfortunate and I’m sorry for the disappointment. C4 is a contest and staff is bound to apply the rules impartially, so there can’t be a change to your submissions on these contests. 
+
+Your fellow wardens here are giving good advice and I appreciate them doing so. This is a great community and we all work hard to treat people with respect here even when we’re frustrated or disagree.
+
+Consider the rules a smart contract worth studying 🙂 Looking forward to seeing you demonstrate your talent in the future within the guidelines provided!
+
+{Reactions}
+💯 (9) 
+
+[08/13/2022 12:34 PM] 0xpathfindr
+Have payouts been completed for this contest?
+
+
+[08/13/2022 12:35 PM] 0xpathfindr
+Is it possible to see transaction receipts for payouts?
+
+
+[08/13/2022 12:49 PM] elku.cryptos
+not sent out yet to wardens.
+
+
+[08/13/2022 6:18 PM] 0xpathfindr
+Thank you
+
+
+[08/15/2022 9:10 AM] saneryee
+Maybe next round.
+
+
+==============================================================
+Exported 111 message(s)
+==============================================================
